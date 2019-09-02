@@ -95,6 +95,46 @@ Response Data Failure:
 
 
 
+#### Endpoint /v1/flatten_3d
+
+Request Data:
+
+```bash
+{
+  "coordinates" : {
+    "x" : 3,
+    "y" : 2,
+    "z" : 6
+  }
+}
+```
+
+Response Data Success:
+
+```bash
+{"message" : [0,0,1,2,3,4,5,1,2,3,4,5,6,1,1,2,3,4,5,6,2,3,4,5,6,7,2,2,3,4,5,6,7,3,4,5,6,7,8], "status" : 200}
+```
+Response Data Failure:
+
+```bash
+ {"message" : "Bad Request, json improperly formatted", "status" : 400}
+```
+
+# Docker Implementation
+
+This project is also available on dockerhub at aapirp/flat_array_api:latest testing cannot be run in the docker container because the image will be compiled, if you want to view testing scripts you will need to use the local installation.
+
+**NOTE**: Using the docker installation both endpoints above will be usable via postman or another api calling product.  No endpoint authorization is needed due to the demo nature of this project.
+
+Docker instructions:
+
+```bash
+docker pull aapirp/flat_array_api:latest
+docker run --publish 8234 aapirp/flat_array_api:latest
+```
+
+
+
 
 
 
