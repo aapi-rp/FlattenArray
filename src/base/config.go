@@ -5,13 +5,35 @@ import (
 )
 
 var defaultPort = "8111"
+var defaultApiHost = "localhost:8111"
+var defaultUrlScheme = "http"
 
 func GetPort() string {
-	port := os.Getenv("port")
+	returnval := os.Getenv("port")
 
-	if port == "" {
-		port = defaultPort
+	if returnval == "" {
+		returnval = defaultPort
 	}
 
-	return port
+	return returnval
+}
+
+func GetApiHost() string {
+	returnval := os.Getenv("api_host")
+
+	if returnval == "" {
+		returnval = defaultApiHost
+	}
+
+	return returnval
+}
+
+func GetUrlScheme() string {
+	returnval := os.Getenv("url_scheme")
+
+	if returnval == "" {
+		returnval = defaultApiHost
+	}
+
+	return returnval
 }
