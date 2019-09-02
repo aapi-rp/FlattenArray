@@ -1,10 +1,10 @@
 # Array Flattening
 ## if running code locally:
 
-####  Environment Requirements
+###  Environment Requirements
 
-Golang 9.0 or above
-At least 1.2 MB of free space
+- Golang 9.0 or above
+- At least 1.2 MB of free space
 
 #### Install golang on mac
 
