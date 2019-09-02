@@ -7,6 +7,11 @@ import (
 )
 
 func TestFlattenStandardArrays(t *testing.T) {
+
+	fmt.Println()
+	fmt.Println("-----Array Flattening Test with Standard and 3d arrays------")
+	fmt.Println()
+
 	// Create a 3D array
 	tryArray := construct.Build3DArray(3, 2, 6)
 
@@ -40,6 +45,10 @@ func TestFlattenStandardArrays(t *testing.T) {
 	if !arraysEqual {
 		t.Errorf("Expected result ** %v ** however the recieved result is: %v", compare, standardArray)
 	}
+
+	fmt.Println()
+	fmt.Println("-----END Array Flattening Test with Standard and 3d arrays------")
+	fmt.Println()
 
 }
 

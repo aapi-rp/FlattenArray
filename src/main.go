@@ -3,7 +3,6 @@ package main
 import (
 	"api/v1"
 	"base"
-	"crypto/tls"
 	"fmt"
 	"github.com/gorilla/mux"
 	"net/http"
@@ -22,7 +21,6 @@ func main() {
 		ReadTimeout:  base.ReadTimeout,
 		WriteTimeout: base.WriteTimeout,
 		IdleTimeout:  base.IdleTimeout,
-		TLSNextProto: make(map[string]func(*http.Server, *tls.Conn, http.Handler), 0),
 	}
 
 	srv.ListenAndServe()

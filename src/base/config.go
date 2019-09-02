@@ -14,8 +14,8 @@ var WriteTimeout = 650 * time.Second
 //IdleTimeout server connection idle timeout
 var IdleTimeout = 670 * time.Second
 
-var defaultPort = "8111"
-var defaultApiHost = "localhost:8111"
+var defaultPort = "8234"
+var defaultApiHost = "localhost:8234"
 var defaultUrlScheme = "http"
 
 func GetPort() string {
@@ -42,7 +42,7 @@ func GetUrlScheme() string {
 	returnval := os.Getenv("url_scheme")
 
 	if returnval == "" {
-		returnval = defaultApiHost
+		returnval = defaultUrlScheme
 	}
 
 	return returnval
