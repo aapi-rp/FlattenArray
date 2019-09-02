@@ -2,7 +2,17 @@ package base
 
 import (
 	"os"
+	"time"
 )
+
+//ReadTimeout server connection read timeout
+var ReadTimeout = 650 * time.Second
+
+//WriteTimeout server connection write timeout
+var WriteTimeout = 650 * time.Second
+
+//IdleTimeout server connection idle timeout
+var IdleTimeout = 670 * time.Second
 
 var defaultPort = "8111"
 var defaultApiHost = "localhost:8111"

@@ -3,16 +3,34 @@ package testing_
 import (
 	"base"
 	"bytes"
-	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"log"
 	"net/http"
+	"testing"
 )
 
-func test_v1_flat_standard() {
+func test_v1_flat_standard(t *testing.T) {
 	json := []byte(arraySeries)
 
 	postUrl := fmt.Sprintf("%s://%s/%s", base.GetUrlScheme(), base.GetApiHost(), "/v1/")
-	resp, err := http.Post(authAuthenticatorUrl, "application/json", bytes.NewBuffer(json))
+	resp, request_err := http.Post(postUrl, "application/json", bytes.NewBuffer(json))
+
+	if request_err != nil {
+		t.Errorf("Request Failed")
+	}
+
+	if resp.StatusCode == 400 {
+		t.Errorf("Improperly formatted request")
+	}
+
+	body, body_err := ioutil.ReadAll(resp.Body)
+
+	if body_err != nil {
+		t.Errorf("Could not read response body from standard api")
+	}
+
+	log.Println(string(body))
 }
 
 var arraySeries = `
